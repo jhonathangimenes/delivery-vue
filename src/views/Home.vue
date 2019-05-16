@@ -1,16 +1,20 @@
 <template>
-<div>
-  <Tab/>
-  <router-view></router-view>
-</div>
+
 </template>
 
 <script>
-import Tab from '@/components/Tab.vue'
+import Tab from "@/components/Tab.vue";
 
 export default {
   components: {
-    Tab,
+    
   }
-}
+};
 </script>
+
+<style scoped>
+  .card {
+    padding-top: 0px;
+  }
+</style>
+

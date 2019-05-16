@@ -1,39 +1,30 @@
 <template>
-    <v-flex>
-            <v-card class="mx-auto elevation-20" color="purple" dark style="max-width: 400px;">
-              <v-layout justify-space-between>
-                <v-flex xs8>
-                  <v-card-title primary-title>
-                    <div>
-                      <div class="headline">Halycon Days</div>
-                      <div>Ellie Goulding</div>
-                      <div>(2013)</div>
-                    </div>
-                  </v-card-title>
-                </v-flex>
-                <v-img
-                  class="shrink ma-2"
-                  contain
-                  height="125px"
-                  src="https://cdn.vuetifyjs.com/images/cards/halcyon.png"
-                  style="flex-basis: 125px"
-                ></v-img>
-              </v-layout>
-              <v-divider dark></v-divider>
-              <v-card-actions class="pa-3">
-                Rate this album
-                <v-spacer></v-spacer>
-                <span class="grey--text text--lighten-2 caption mr-2">({{ rating }})</span>
-                <v-rating
-                  v-model="rating"
-                  background-color="white"
-                  color="yellow accent-4"
-                  dense
-                  half-increments
-                  hover
-                  size="18"
-                ></v-rating>
-              </v-card-actions>
-            </v-card>
-      </v-flex>
+  <v-card>
+    <v-card-text class="px-0 card">
+      <img src="@/assets/download.jpeg" alt width="80rem" height="80rem">
+      <div>
+        <p class="nome font-weight-medium">DOG AVENIDA</p>
+        <p class="endereco">AV. DOS IPÊS - CIDADE JARDIM, PARAUAPEBAS - PA, 68515-0...</p>
+      </div>
+    </v-card-text>
+  </v-card>
 </template>
+
+<style scoped>
+  .card {
+    display: flex;
+    text-align: left ;
+    padding: 20px 20px 10px 20px!important;
+  }
+
+  .nome {
+    padding: 0px 0px 0px 10px;
+    font-size: 14px;
+  }
+
+  .endereco {
+    padding: 0px 0px 0px 10px;
+    font-size: 14px;
+  }
+</style>
+
