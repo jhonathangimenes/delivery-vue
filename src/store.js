@@ -6,12 +6,16 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    urls: {
+      estabelecimento: '/estabelecimentos',
+      promocoes: '/promoções',
+      entrar: '/login'
+    },
     estabelecimentos: []
   },
   mutations: {
     getEstabelecimentos: (state, payload) => {
       state.estabelecimentos = payload
-      console.log(state.estabelecimentos)
     }
   },
   actions: {

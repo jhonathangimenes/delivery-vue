@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import EstabelecimentoLista from '@/components/estabelecimentos/EstabelecimentoLista.vue'
+import EstabelecimentoLista from "@/components/estabelecimentos/EstabelecimentoLista.vue";
 
 export default {
   components: {
@@ -11,3 +11,8 @@ export default {
   }
 };
 </script>
+<style>
+.max-width {
+  width: 70%;
+}
+</style>

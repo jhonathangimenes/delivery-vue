@@ -8,7 +8,7 @@
         height="80rem"
       >
       <div>
-        <p class="nome font-weight-medium">{{ estabelecimento.nome_fantasia }}</p>
+        <p class="nome font-weight-medium">{{ nomeFormatado }}</p>
         <p class="endereco">{{ enderecoFormatado }}</p>
       </div>
     </v-card-text>
@@ -26,6 +26,9 @@ export default {
   computed: {
     enderecoFormatado() {
       return this.estabelecimento.endereco.substring(0, 30);
+    },
+    nomeFormatado() {
+      return this.estabelecimento.nome_fantasia.charAt(0).toUpperCase() + this.estabelecimento.nome_fantasia.slice(1).toLowerCase()
     }
   }
 };
@@ -64,6 +67,7 @@ export default {
 .card-border{
   border: solid 1px #ced6e0;
   border-radius: 5px;
+  height: 100%;
 }
 </style>
 
