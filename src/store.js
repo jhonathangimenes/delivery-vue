@@ -6,11 +6,11 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    urls: {
-      estabelecimento: '/estabelecimentos',
-      promocoes: '/promoções',
-      entrar: '/login'
-    },
+    urls: [
+      { nome: 'Estabelecimentos', url: '/estabelecimentos' },
+      { nome: 'Promoções', url: '/promoções' },
+      { nome: 'Entrar', url: '/login' }
+    ],
     estabelecimentos: []
   },
   mutations: {
