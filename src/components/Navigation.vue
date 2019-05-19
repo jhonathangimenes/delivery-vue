@@ -1,41 +1,56 @@
 <template>
-  <v-card height="350px">
-    <v-navigation-drawer
-      v-model="drawer"
-      permanent
-      absolute
+<div>
+  <v-toolbar flat>
+    <v-list class="color-red">
+      <v-list-tile>
+        <v-list-tile-title class="title text-white">
+          Chefão Delivery
+        </v-list-tile-title>
+      </v-list-tile>
+    </v-list>
+  </v-toolbar>
+  <v-divider></v-divider>
+  <v-list dense class="pt-0">
+    <v-list-tile
+      v-for="url in urls"
+      :key="url.nome"
     >
-      <v-toolbar flat class="transparent">
-        <v-list class="pa-0">
-          <v-list-tile avatar>
-            <v-list-tile-avatar>
-              <img src="https://randomuser.me/api/portraits/men/85.jpg">
-            </v-list-tile-avatar>
-
-            <v-list-tile-content>
-              <v-list-tile-title>John Leider</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </v-list>
-      </v-toolbar>
-
-      <v-list class="pt-0" dense>
-        <v-divider></v-divider>
-
-        <v-list-tile
-          v-for="item in items"
-          :key="item.title"
-          @click=""
-        >
-          <v-list-tile-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-tile-action>
-
-          <v-list-tile-content>
-            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-  </v-card>
+      <v-list-tile-action>
+        <v-icon class="text-white">{{ url.icon }}</v-icon>
+      </v-list-tile-action>
+      <v-list-tile-content>
+        <router-link :to="url.url">
+        <v-list-tile-title class="text-white">{{ url.nome }}</v-list-tile-title>
+        </router-link>
+      </v-list-tile-content>
+    </v-list-tile>
+  </v-list>
+</div>
 </template>
+
+<script>
+export default {
+  props: {
+    urls: {
+      type: Array,
+      required: true
+    }
+  }
+}
+</script>
+
+<style scoped>
+  .color-red {
+    background-color: #b71c1c!important;
+  }
+
+  .text-white {
+    color: #ffff!important;
+
+  }
+
+  a {
+    text-decoration:none!important; 
+  }
+</style>
+

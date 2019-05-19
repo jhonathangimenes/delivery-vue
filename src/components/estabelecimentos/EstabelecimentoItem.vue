@@ -31,9 +31,8 @@ export default {
       return this.estabelecimento.nome_fantasia.charAt(0).toUpperCase() + this.estabelecimento.nome_fantasia.slice(1).toLowerCase()
     }
   }
-};
+}
 </script>
-
 
 <style scoped>
 .card {

@@ -2,8 +2,7 @@
   <div>
     <v-flex md12>
       <v-card-text class="text-center">
-        <p class="display-3 font-weight-light">Não fique com fome</p>
-        <p class="subheading font-weight-light">Escolha a cidade e encontre um estabelecimento</p>
+        <img class="logo" src="./../../assets/logo.png" width="370px" alt="">
       </v-card-text>
     </v-flex>
     <v-layout row class="p-left-right">
@@ -65,6 +64,9 @@ export default {
     font-size: 14px!important;
     margin: 5px 0px 0px 0px;
   }
+  .logo {
+    width: 200px
+  }
 }
 
 @media (max-width: 330px) {
@@ -73,6 +75,9 @@ export default {
   }
   .subheading {
     font-size: 12px!important;
+  }
+  .logo {
+    width: 200px
   }
 }
 </style>
