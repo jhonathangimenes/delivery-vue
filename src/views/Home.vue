@@ -6,12 +6,14 @@
           <p class="display-3 font-weight-light">Baixe o aplicativo</p>
           <p class="title font-weight-light">E faça um pedido agora mesmo!</p>
         </v-card-text>
-        <v-btn fab dark large color="purple">
+        <v-btn href="https://play.google.com/store/apps/details?id=chefao.dixbpo.com&hl=pt" fab dark large color="purple">
           <v-icon dark>android</v-icon>
         </v-btn>
+        <a href="https://itunes.apple.com/br/app/chef%C3%A3o-delivery/id1455536224?mt=8">
         <v-btn fab dark large color="purple">
           <v-icon dark>fab fa-apple</v-icon>
         </v-btn>
+        </a>
       </v-flex>
       <v-flex md6 class="hidden-sm-and-down">
         <img src="./../assets/home/iphone.png" width="300px" height="100%" alt>
@@ -21,9 +23,9 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 
-export default {  
+export default {
   created() {
     this.removerAnimacao()
   },
@@ -31,12 +33,24 @@ export default {
     ...mapMutations(['removerAnimacao', 'adicionarAnimacao'])
   },
   beforeRouteLeave (to, from, next) {
-    console.log('router')
     this.adicionarAnimacao()
     next()
   }
 }
 </script>
+
+<style scoped>
+  .v-btn {
+    background-color: #b71c1c!important
+  }
+  a {
+    text-decoration: none;
+  }
+  .title {
+    font-size: 16px!important;
+  }
+</style>
+
 
 
 

@@ -8,8 +8,8 @@
         height="80rem"
       >
       <div>
-        <p class="nome font-weight-medium">{{ nomeFormatado }}</p>
-        <p class="endereco">{{ enderecoFormatado }}</p>
+        <p class="nome font-weight-light">{{ nomeFormatado }}</p>
+        <p class="endereco font-weight-light">{{ enderecoFormatado }}</p>
       </div>
     </v-card-text>
   </div>
@@ -49,13 +49,13 @@ export default {
 .nome {
   padding: 0px 0px 0px 10px;
   margin: 0px;
-  font-size: 14px;
+  font-size: 16px;
   color: #2f3542;
 }
 
 .endereco {
   padding: 0px 0px 0px 10px;
-  font-size: 14px;
+  font-size: 12px;
   color: #747d8c;
 }
 

@@ -13,16 +13,17 @@ export default {
     Carregamento
   },
   computed: {
-    ...mapState(['estabelecimentos']),
+    ...mapState(['estabelecimentosPorCidade']),
     componentes() {
-      return this.estabelecimentos.length == 0 ? 'Carregamento' : 'EstabelecimentoLista'
+      return this.estabelecimentosPorCidade.length == 0 ? 'Carregamento' : 'EstabelecimentoLista'
     }
   },
   created() {
-    this.getEstabelecimentos();
+    const idCidade = window.localStorage.getItem('idCidade')
+    idCidade == null ? this.$router.push('/') : this.getEstabelecimentosPorCidade(idCidade)
   },
   methods: {
-    ...mapActions(['getEstabelecimentos'])
+    ...mapActions(['getEstabelecimentosPorCidade'])
   }
 }
 </script>

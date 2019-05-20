@@ -11,5 +11,11 @@ const apiCliente = axios.create({
 export default {
     getEstabelecimentos() {
         return apiCliente.get('/estabelecimento')
+    },
+    getCidades() {
+        return apiCliente.get('/cidades/ativas')
+    },
+    getEstabelecimentosPorCidade(idCidade) {
+        return apiCliente.get(`/estabelecimento/cidade/${idCidade}`)
     }
 }

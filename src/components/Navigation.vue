@@ -24,6 +24,18 @@
         </router-link>
       </v-list-tile-content>
     </v-list-tile>
+    <v-list-tile>
+      <v-list-tile-action>
+        <v-icon class="text-white">home</v-icon>
+      </v-list-tile-action>
+      <v-list-tile-content>
+        <v-list-tile-title class="text-white">
+          <a class="none-style" href="http://chefaodelivery.com.br/login">
+            Entrar
+          </a>
+        </v-list-tile-title>
+      </v-list-tile-content>
+    </v-list-tile>
   </v-list>
 </div>
 </template>

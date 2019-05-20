@@ -16,6 +16,13 @@
         >
           {{ url.nome }}
         </v-btn>
+        <v-btn  class="text-none font-weight-light" 
+          flat
+        >
+          <a class="none-style" href="http://chefaodelivery.com.br/login">
+            Entrar
+          </a>
+        </v-btn>
       </v-toolbar-items>
     </v-toolbar>
     <div v-else class="image-fundo">
@@ -25,12 +32,19 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn class="text-none font-weight-light" v-for="(url, index) in urls" 
-          :key="index"
-          :to="url.url"
+        <v-btn  class="text-none font-weight-light" 
           flat
         >
-          {{ url.nome }}
+          <a class="none-style" href="http://chefaodelivery.com.br/login">
+            Cadastra-se
+          </a>
+        </v-btn>
+        <v-btn  class="text-none font-weight-light" 
+          flat
+        >
+          <a class="none-style" href="http://chefaodelivery.com.br/login">
+            Entrar
+          </a>
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
@@ -38,7 +52,7 @@
         <BuscarCidade/>
       </v-layout>
     </div>
-    <v-navigation-drawer class="color-red" v-model="drawer" app>
+    <v-navigation-drawer class="color-red" v-model="drawer"  app>
       <Navigation :urls="urls"/>
     </v-navigation-drawer>
   </div>
@@ -76,6 +90,10 @@ export default {
     background-size: 100%;
   }
 
+  .text-none {
+    font-size: 16px
+  }
+
   .transparante{ 
     background-color: rgba(183, 28, 28, 0)!important;
     box-shadow: none!important;
@@ -83,6 +101,11 @@ export default {
 
   .color-red {
     background-color: #b71c1c!important;
+  }
+
+  .none-style {
+    text-decoration:none; 
+    color: #ffff;
   }
 
   @media (max-width: 600px) {

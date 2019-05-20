@@ -7,10 +7,16 @@
     </v-flex>
     <v-layout row class="p-left-right">
       <v-flex md9 class="select">
-        <v-select :items="items" label="Escolha cidade" solo></v-select>
+        <v-select :items="cidades" 
+          item-text="nome" item-value="id" 
+          :label="cidades.length == 0 ? 'Aguarde...' : 'Escolha cidade'" 
+          solo 
+          v-model="cidade"
+        >
+        </v-select>
       </v-flex>
       <v-flex md3>
-        <v-btn class="button-buscar">
+        <v-btn class="button-buscar" @click="buscar()">
           Buscar
           <v-icon class="icon-search">search</v-icon>
         </v-btn>
@@ -20,13 +26,29 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
+
 export default {
   data() {
     return {
-      items: ["Paraupebas - PA", "Imperatriz - MA"]
-    };
+      cidade: ''
+    }
+  },
+  created() {
+    const idCidade = window.localStorage.getItem('idCidade')
+    idCidade != null ? this.$router.push('/estabelecimentos') : ''
+  },
+  computed: {
+    ...mapState(['cidades'])
+  },
+  methods: {
+    ...mapActions(['getCidades', 'getEstabelecimentosPorCidade']),
+    buscar() {
+      window.localStorage.setItem('idCidade', this.cidade)
+      this.$router.push('/estabelecimentos')
+    }
   }
-};
+}
 </script>
 
 <style scoped>
