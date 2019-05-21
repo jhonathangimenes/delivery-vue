@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 
 import Estabelecimentos from '@/views/Estabelecimentos.vue'
+import Promocoes from '@/views/Promocoes.vue'
 
 Vue.use(Router)
 
@@ -17,6 +18,9 @@ export default new Router({
     },
     { path: '/estabelecimentos',
       component: Estabelecimentos
+    },
+    { path: '/promocoes',
+      component: Promocoes
     }
   ]
 })

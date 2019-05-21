@@ -17,5 +17,8 @@ export default {
     },
     getEstabelecimentosPorCidade(idCidade) {
         return apiCliente.get(`/estabelecimento/cidade/${idCidade}`)
+    },
+    getPromocoesPorCidade(idCidade) {
+        return apiCliente.get(`/promocoes/${idCidade}`)
     }
 }

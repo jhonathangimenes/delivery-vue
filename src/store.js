@@ -7,10 +7,11 @@ export default new Vuex.Store({
   state: {
     urls: [
       { nome: 'Estabelecimentos', url: '/estabelecimentos', icon: 'home' },
-      { nome: 'Promoções', url: '/promoções', icon: 'attach_money' }
+      { nome: 'Promoções', url: '/promocoes', icon: 'attach_money' }
     ],
     estabelecimentos: [],
     estabelecimentosPorCidade: [],
+    promocoesPorCidade: [],
     cidades:[],
     cidade: {},
     animacao: 'list'
@@ -31,8 +32,10 @@ export default new Vuex.Store({
       }, 500)
     },
     getEstabelecimentosPorCidade: (state, payload) => {
-      state.estabelecimentosPorCidade = payload
       payload.length == 0 ? state.estabelecimentosPorCidade = ['vazio'] : state.estabelecimentosPorCidade = payload
+    },
+    getPromocoesPorCidade: (state, payload) => {
+      payload.length == 0 ? state.promocoesPorCidade = ['vazio'] : state.promocoesPorCidade = payload
     }
   },
   actions: {
@@ -47,6 +50,10 @@ export default new Vuex.Store({
     getEstabelecimentosPorCidade: async (context, idCidade) => {
       const response = await Service.getEstabelecimentosPorCidade(idCidade)
       context.commit('getEstabelecimentosPorCidade', response.data.estabelecimentos)
+    },
+    getPromocoesPorCidade: async (context, idCidade) => {
+      const response = await Service.getPromocoesPorCidade(idCidade)
+      context.commit('getPromocoesPorCidade', response.data)
     }
   }
 })

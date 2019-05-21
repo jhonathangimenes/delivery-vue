@@ -1,5 +1,5 @@
 <template>
-  <component :is="componentes"></component>
+  <component :is="componente"></component>
 </template>
 
 <script>
@@ -14,7 +14,7 @@ export default {
   },
   computed: {
     ...mapState(['estabelecimentosPorCidade']),
-    componentes() {
+    componente() {
       return this.estabelecimentosPorCidade.length == 0 ? 'Carregamento' : 'EstabelecimentoLista'
     }
   },

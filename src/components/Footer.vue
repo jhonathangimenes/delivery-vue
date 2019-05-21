@@ -29,7 +29,7 @@
             <v-card-text>
               <p class="title font-weight-light">Acesso Administrativo</p>
               <v-btn color="warning" href="http://chefaodelivery.com.br/login" class="text-black">
-                Login
+                Entrar
               </v-btn>
               <v-btn color="warning" href="https://webmail-seguro.com.br/chefaodelivery.com.br/" class="text-black">
                 Web-mail
