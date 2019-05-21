@@ -68,5 +68,9 @@ export default {
   border-radius: 5px;
   height: 100%;
 }
+.nome {
+    font-size: 16px;
+    color: #2f3542;
+}
 </style>
 
