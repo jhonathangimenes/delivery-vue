@@ -1,5 +1,5 @@
 <template>
-  <v-list two-line>
+  <v-list two-line class="pa-0">
       <v-list-tile>
         <v-list-tile-content>
           <v-list-tile-title class="nome font-weight-light">{{ nomeFormatado }}</v-list-tile-title>

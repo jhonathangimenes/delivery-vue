@@ -20,8 +20,8 @@
                     </v-btn>
                 </v-toolbar>
                 <v-divider></v-divider>
-                <PromocoesItem 
-                    class="cor"
+                <PromocoesItem
+                    class="cor efeito-hover"
                     v-for="(produto, indice) in estabelecimento.produtos" 
                     :key="produto.id"
                     :produto="produto"
@@ -76,6 +76,9 @@ export default {
     .nome {
         font-size: 16px;
         color: #2f3542;
+    }
+    .efeito-hover:hover {
+        background-color: #f1f2f6!important;
     }
 </style>
 
